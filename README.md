@@ -1,2 +1,10 @@
-# enterprise-firewall-security-assessment-framework
-Enterprise Firewall Security Assessemnt Framework for Palo Alto, Fortinet &amp; Cisco Firewalls
+# Enterprise-Firewall-Security-Assessment-Framework
+## Overview
+## Objectives
+## Supported Vendors
+- Palo Alto
+- Cisco
+- Fortinet
+## Assessment Areas
+## Report Structure
+## Roadmap
