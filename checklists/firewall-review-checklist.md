@@ -1,6 +1,6 @@
 # Enterprise Firewall Review Checklist
 
-Architecture Review (42 Checks)
+Architecture Review (57 Checks)
 
 # Architecture Review
 
@@ -90,58 +90,98 @@ Architecture Review (42 Checks)
 
 ---
 
-Management Plane Security (30 Checks)
+Management Plane Security (61 Security Checks)
 
 # Management Plane Security
 
 ## Administrative Access
 
-- [ ] Verify HTTPS is enabled.
-- [ ] Verify SSH is enabled.
-- [ ] Verify Telnet is disabled.
+- [ ] Verify HTTPS is enabled for web-based management.
+- [ ] Verify SSH is enabled for CLI management.
 - [ ] Verify HTTP is disabled.
+- [ ] Verify Telnet is disabled.
 - [ ] Verify insecure management protocols are disabled.
+- [ ] Verify management access is restricted to approved protocols only.
 
-## Authentication
 
-- [ ] Verify MFA is enabled for administrators.
-- [ ] Verify TACACS+ or RADIUS authentication is configured.
-- [ ] Verify local accounts are limited.
-- [ ] Verify default accounts are disabled.
-- [ ] Verify RBAC is implemented.
+
+## Authentication and Authorization
+
+- [ ] Verify Multi-Factor Authentication (MFA) is enabled for all administrative accounts.
+- [ ] Verify TACACS+, RADIUS, or LDAP authentication is configured where applicable.
+- [ ] Verify Role-Based Access Control (RBAC) is implemented.
+- [ ] Verify administrator permissions follow the principle of least privilege.
+- [ ] Verify local administrator accounts are limited to emergency use.
+- [ ] Verify default or vendor-supplied accounts are disabled or renamed.
+- [ ] Verify administrator accounts are individually assigned (shared accounts are prohibited).
 
 ## Access Control
+- [ ] Verify management access is restricted to authorized management networks.
+- [ ] Verify management interfaces are not directly accessible from the Internet.
+- [ ] Verify out-of-band management is implemented where required.
+- [ ] Verify administrative jump servers are used where required.
+- [ ] Verify administrator login banners display authorized use warnings.
+- [ ] Verify API access is restricted to authorized systems.
 
-- [ ] Verify management access is restricted to trusted IP addresses.
-- [ ] Verify management interface is not Internet accessible.
-- [ ] Verify administrative access is limited to management networks.
-- [ ] Verify out-of-band management is implemented where possible.
-- [ ] Verify administrator login banners are configured.
+## Password and Account Security
+- [ ] Verify password complexity requirements are enforced.
+- [ ] Verify password expiration complies with organizational policy.
+- [ ] Verify account lockout is configured after repeated failed login attempts.
+- [ ] Verify inactive administrator accounts are disabled or removed.
+- [ ] Verify privileged account reviews are performed periodically.
+- [ ] Verify emergency administrator accounts are documented and monitored.
+- [ ] Verify administrator account lifecycle follows joiner, mover, and leaver procedures.
 
-## Password Security
+## Management Services
 
-- [ ] Verify password complexity policy is enforced.
-- [ ] Verify password expiration is configured.
-- [ ] Verify account lockout policy is enabled.
-- [ ] Verify inactive administrator accounts are disabled.
-- [ ] Verify shared administrator accounts are avoided.
+- [ ] Verify only required management services are enabled.
+- [ ] Verify unused management services are disabled.
+- [ ] Verify SNMPv1 and SNMPv2 are disabled.
+- [ ] Verify only SNMPv3 is enabled where SNMP is required.
+- [ ] Verify secure NTP is configured using trusted time sources.
+- [ ] Verify DNS servers used for management are trusted and documented.
+
+## Session Security
+
+- [ ] Verify administrator sessions automatically timeout after inactivity.
+- [ ] Verify concurrent administrator session limits are configured.
+- [ ] Verify failed authentication attempts generate security alerts.
+- [ ] Verify administrator login notifications are enabled where supported.
+- [ ] Verify administrative sessions are encrypted.
 
 ## Configuration Security
+- [ ] Verify configuration backups are performed regularly.
+- [ ] Verify configuration backups are encrypted.
+- [ ] Verify backup restoration procedures are tested periodically.
+- [ ] Verify configuration changes require formal approval.
+- [ ] Verify configuration changes are logged and auditable.
+- [ ] Verify firmware and software upgrades follow the organization's change management process.
+- [ ] Verify software integrity is validated before installation.
 
-- [ ] Verify configuration backups are scheduled.
-- [ ] Verify backups are encrypted.
-- [ ] Verify backup restoration has been tested.
+## Logging & Monitoring
+- [ ] Verify successful administrator logins are logged.
+- [ ] Verify failed administrator login attempts are logged.
+- [ ] Verify privilege escalation events are logged.
+- [ ] Verify administrator logout events are logged.
 - [ ] Verify configuration changes are logged.
+- [ ] Verify management logs are forwarded to a centralized SIEM or log management platform.
+- [ ] Verify management log retention complies with organizational requirements.
 
-## Monitoring
+## Certificates & Cryptography
 
-- [ ] Verify administrator login events are logged.
-- [ ] Verify failed login attempts are logged.
-- [ ] Verify privilege changes are logged.
-- [ ] Verify configuration changes are audited.
-- [ ] Verify logs are forwarded to SIEM.
-- [ ] Verify NTP is configured for accurate timestamps.
+- [ ] Verify management certificates are issued by a trusted Certificate Authority.
+- [ ] Verify expired or self-signed certificates are replaced where organizational policy requires.
+- [ ] Verify weak SSL/TLS protocols are disabled.
+- [ ] Verify strong cryptographic algorithms are used for management access.
+- [ ] Verify cryptographic certificates are renewed before expiration.
 
+## Best Practices
+
+- [ ] Verify administrative access is reviewed periodically.
+- [ ] Verify management plane security complies with organizational hardening standards.
+- [ ] Verify management plane configuration aligns with CIS Benchmarks where applicable.
+- [ ] Verify administrative activities are periodically audited.
+- [ ] Verify documented exceptions are formally approved and reviewed.
 
 ---
 
