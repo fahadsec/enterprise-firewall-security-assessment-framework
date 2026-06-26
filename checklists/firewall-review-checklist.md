@@ -364,71 +364,275 @@ NAT Review (56 Checks)
 - [ ] Verify NAT implementation supports PCI DSS requirements where applicable.
 ---
 
-VPN Security Review (30 Checks)
+VPN Security Review (63 Checks)
 
 # VPN Security
+## VPN Governance
+- [ ] Verify every VPN connection has a documented business justification.
+- [ ] Verify every VPN connection has an assigned business owner.
+- [ ] Verify VPN changes follow the organization's change management process.
+- [ ] Verify VPN configurations are periodically reviewed and recertified.
+- [ ] Verify unused or obsolete VPN tunnels are removed.
 
-## VPN Configuration
-
-- [ ] Verify VPN business justification is documented.
-- [ ] Verify only approved VPN types are used.
-- [ ] Verify VPN gateways are hardened.
-- [ ] Verify unnecessary VPN tunnels are removed.
+## VPN Architecture
+- [ ] Verify only approved VPN technologies are deployed.
+- [ ] Verify VPN gateways are hardened according to organizational standards.
+- [ ] Verify VPN architecture follows the principle of least privilege.
+- [ ] Verify backup VPN tunnels are configured where required.
+- [ ] Verify VPN routing follows the approved network architecture.
+- [ ] Verify Internet-facing VPN gateways are protected by appropriate security controls.
 
 ## Cryptography
-
-- [ ] Verify strong encryption algorithms are used.
-- [ ] Verify SHA-1 and other deprecated algorithms are not used.
+- [ ] Verify IKEv2 is used where supported.
+- [ ] Verify IKEv1 is disabled unless explicitly required for compatibility.
+- [ ] Verify strong encryption algorithms (AES-256 or organizationally approved equivalents) are configured.
+- [ ] Verify deprecated encryption algorithms are disabled.
+- [ ] Verify SHA-1 and other deprecated hashing algorithms are not used unless formally approved.
 - [ ] Verify Perfect Forward Secrecy (PFS) is enabled.
 - [ ] Verify strong Diffie-Hellman groups are configured.
-- [ ] Verify weak ciphers are disabled.
+- [ ] Verify weak ciphers and insecure protocols are disabled.
 
-## Authentication
+## Authentication & Authorization
+- [ ] Verify Multi-Factor Authentication (MFA) is enabled for remote access VPN users.
+- [ ] Verify certificate-based authentication is implemented where applicable.
+- [ ] Verify VPN authentication integrates with centralized identity services (LDAP, RADIUS, TACACS+, SAML, etc.) where applicable.
+- [ ] Verify VPN user access follows the principle of least privilege.
+- [ ] Verify shared VPN accounts are prohibited.
+- [ ] Verify disabled user accounts cannot authenticate to the VPN.
+- [ ] Verify privileged VPN access requires additional authorization where applicable.
 
-- [ ] Verify MFA is enabled for remote access VPN.
-- [ ] Verify certificate-based authentication is used where possible.
-- [ ] Verify shared credentials are prohibited.
-- [ ] Verify VPN user access follows least privilege.
-
-## Tunnel Security
-
-- [ ] Verify split tunneling is disabled unless approved.
+## Remote Access VPN
+- [ ] Verify remote VPN users can access only authorized network segments.
+- [ ] Verify split tunneling is disabled unless explicitly approved.
+- [ ] Verify endpoint posture or compliance validation is enforced where supported.
 - [ ] Verify idle session timeout is configured.
-- [ ] Verify VPN session lifetime is limited.
-- [ ] Verify tunnel monitoring is enabled.
+- [ ] Verify maximum VPN session lifetime is configured.
+- [ ] Verify VPN sessions terminate immediately when user accounts are disabled.
+- [ ] Verify remote access VPN configurations are periodically reviewed.
 
 ## Site-to-Site VPN
-
 - [ ] Verify peer IP addresses are documented.
-- [ ] Verify peer authentication is secure.
-- [ ] Verify routing over VPN is restricted.
-- [ ] Verify backup VPN tunnels are tested.
+- [ ] Verify peer authentication is securely configured.
+- [ ] Verify VPN routing permits only authorized networks.
+- [ ] Verify encryption domains are correctly defined.
+- [ ] Verify unnecessary networks are not advertised through VPN tunnels.
+- [ ] Verify redundant site-to-site VPN tunnels are periodically tested.
 
-## Monitoring
+## Tunnel Security
+- [ ] Verify VPN tunnels are continuously monitored.
+- [ ] Verify Dead Peer Detection (DPD) or equivalent keepalive mechanisms are enabled where supported.
+- [ ] Verify tunnel rekey intervals comply with organizational standards.
+- [ ] Verify tunnel failures generate alerts.
+- [ ] Verify unauthorized VPN peers are rejected.
+- [ ] Verify VPN tunnels do not bypass firewall security inspection without formal approval.
 
-- [ ] Verify VPN events are logged.
-- [ ] Verify failed VPN logins are monitored.
-- [ ] Verify VPN logs are forwarded to SIEM.
-- [ ] Verify anomalous VPN activity is monitored.
+## Certificate Management
+- [ ] Verify VPN certificates are issued by a trusted Certificate Authority.
+- [ ] Verify VPN certificates are renewed before expiration.
+- [ ] Verify certificate revocation checking (CRL or OCSP) is enabled where supported.
+- [ ] Verify expired or revoked certificates cannot be used for VPN authentication.
+- [ ] Verify private keys associated with VPN certificates are securely protected.
 
-## Best Practices
+## Logging & Monitoring
+- [ ] Verify successful VPN logins are logged.
+- [ ] Verify failed VPN authentication attempts are logged.
+- [ ] Verify VPN logs are forwarded to the SIEM or centralized log management platform.
+- [ ] Verify abnormal VPN login locations generate alerts where supported.
+- [ ] Verify impossible-travel VPN events are monitored where supported.
+- [ ] Verify repeated failed VPN login attempts generate alerts.
+- [ ] Verify VPN log retention complies with organizational policy.
 
-- [ ] Verify VPN configurations are reviewed periodically.
-- [ ] Verify inactive VPN accounts are removed.
-- [ ] Verify inactive VPN tunnels are removed.
-- [ ] Verify VPN changes follow change management.
-- [ ] Verify VPN documentation is current.
-- [ ] Verify VPN complies with organizational standards.
+##  Compliance & Best Practices
+- [ ] Verify VPN implementation complies with organizational security standards.
+- [ ] Verify VPN implementation aligns with CIS Benchmarks where applicable.
+- [ ] Verify VPN implementation supports NIST Cybersecurity Framework requirements where applicable.
+- [ ] Verify VPN implementation supports ISO/IEC 27001:2022 security controls where applicable.
+- [ ] Verify VPN implementation supports PCI DSS 4.0 requirements where applicable.
+- [ ] Verify documented VPN exceptions are formally approved and periodically reviewed.
 
 
 ---
 
-## Authentication
+Logging & Monitoring Review (60 Checks)
+# Logging & Monitoring 
+## Logging Configuration (7 Checks)
+- [ ] Verify logging is enabled for all security-relevant firewall policies.
+- [ ] Verify both successful and denied connections are logged where required.
+- [ ] Verify administrator authentication events are logged.
+- [ ] Verify administrator logout events are logged.
+- [ ] Verify configuration changes are logged.
+- [ ] Verify system events are logged.
+- [ ] Verify log severity levels are configured according to organizational standards.
 
-## Logging
+## Log Collection (6 Checks)
+- [ ] Verify firewall logs are forwarded to a centralized log management platform.
+- [ ] Verify log forwarding uses secure protocols where supported.
+- [ ] Verify all log types (Traffic, Threat, System, Configuration, Authentication, VPN, NAT) are collected.
+- [ ] Verify log forwarding failures generate alerts.
+- [ ] Verify redundant log collectors are configured where required.
+- [ ] Verify log collection continues during firewall failover where supported.
 
-## Threat Prevention
+## Log Integrity & Retention (6 Checks)
+- [ ] Verify log retention complies with organizational policy.
+- [ ] Verify log retention complies with regulatory requirements.
+- [ ] Verify logs are protected against unauthorized modification or deletion.
+- [ ] Verify archived logs are securely stored.
+- [ ] Verify log integrity validation is implemented where supported.
+- [ ] Verify log storage capacity is monitored.
 
-## High Availability
+## SIEM Integration (7 Checks)
+- [ ] Verify firewall logs are integrated with the organization's SIEM.
+- [ ] Verify firewall events are correctly parsed by the SIEM.
+- [ ] Verify event normalization is functioning correctly.
+- [ ] Verify event correlation rules include firewall events.
+- [ ] Verify high-risk firewall events generate security alerts.
+- [ ] Verify firewall assets are correctly identified in the SIEM.
+- [ ] Verify log ingestion health is continuously monitored.
 
-## Best Practices
+## Monitoring & Alerting (7 Checks)
+- [ ] Verify repeated administrator login failures generate alerts.
+- [ ] Verify HA failover events generate alerts.
+- [ ] Verify VPN failures generate alerts.
+- [ ] Verify threat prevention detections generate alerts.
+- [ ] Verify excessive denied traffic generates alerts.
+- [ ] Verify excessive configuration changes generate alerts.
+- [ ] Verify critical system failures generate alerts.
+
+## Time Synchronization (5 Checks)
+- [ ] Verify NTP is configured.
+- [ ] Verify trusted NTP servers are used.
+- [ ] Verify system time is synchronized across security devices.
+- [ ] Verify time synchronization failures generate alerts.
+- [ ] Verify log timestamps are accurate and consistent.
+
+## Audit & Compliance (5 Checks)
+- [ ] Verify audit logs cannot be disabled by unauthorized users.
+- [ ] Verify audit trails support forensic investigations.
+- [ ] Verify log review activities are documented.
+- [ ] Verify periodic log reviews are performed.
+- [ ] Verify logging complies with organizational security standards.
+
+## Operational Monitoring (6 Checks)
+- [ ] Verify CPU utilization is monitored.
+- [ ] Verify memory utilization is monitored.
+- [ ] Verify disk utilization is monitored.
+- [ ] Verify interface utilization is monitored.
+- [ ] Verify session utilization is monitored.
+- [ ] Verify hardware health events are monitored.
+
+## Incident Response Support (5 Checks)
+- [ ] Verify logs contain sufficient information for incident investigations.
+- [ ] Verify firewall logs support threat hunting activities.
+- [ ] Verify critical security events are retained for forensic analysis.
+- [ ] Verify incident response teams have access to required firewall logs.
+- [ ] Verify firewall logging supports root cause analysis.
+
+## Best Practices (6 Checks)
+- [ ] Verify logging and monitoring configurations are periodically reviewed.
+- [ ] Verify logging follows the principle of minimum required data loss.
+- [ ] Verify logging configurations align with CIS Benchmarks where applicable.
+- [ ] Verify logging supports NIST Cybersecurity Framework requirements where applicable.
+- [ ] Verify logging supports ISO/IEC 27001:2022 security controls where applicable.
+- [ ] Verify logging supports PCI DSS 4.0 requirements where applicable.
+
+Threat Prevention Review (76 Checks)
+# Threat Prevention
+## Threat Prevention Governance (5 Checks)
+- [ ] Verify threat prevention policies have documented business justification.
+- [ ] Verify threat prevention profiles are reviewed periodically.
+- [ ] Verify security exceptions are documented and formally approved.
+- [ ] Verify temporary security exceptions have an expiration date.
+- [ ] Verify threat prevention changes follow change management procedures.
+
+## IPS / Vulnerability Protection (8 Checks)
+- [ ] Verify IPS/Vulnerability Protection profiles are enabled.
+- [ ] Verify IPS profiles are applied to all applicable security policies.
+- [ ] Verify critical and high-severity signatures are configured to block where organizational policy permits.
+- [ ] Verify medium and low-severity signatures are configured according to organizational risk appetite.
+- [ ] Verify custom IPS signatures are documented and maintained.
+- [ ] Verify IPS exceptions are reviewed periodically.
+- [ ] Verify IPS signature updates are automatically installed.
+- [ ] Verify IPS effectiveness is periodically validated.
+
+## Anti-Malware / Antivirus (6 Checks)
+- [ ] Verify Anti-Malware profiles are enabled.
+- [ ] Verify Anti-Malware inspection is applied to applicable traffic.
+- [ ] Verify malware signature updates are automatic.
+- [ ] Verify malware detection actions follow organizational policy.
+- [ ] Verify malware exceptions are documented and approved.
+- [ ] Verify Anti-Malware effectiveness is periodically reviewed.
+
+## Anti-Spyware & Botnet Protection (7 Checks)
+- [ ] Verify Anti-Spyware profiles are enabled.
+- [ ] Verify command-and-control (C2) communication is detected and blocked where supported.
+- [ ] Verify botnet protection is enabled.
+- [ ] Verify DNS-based malware detection is enabled where supported.
+- [ ] Verify spyware signature updates are current.
+- [ ] Verify outbound malicious communications generate alerts.
+- [ ] Verify Anti-Spyware profiles are applied to applicable policies.
+
+## DNS Security (6 Checks)
+- [ ] Verify DNS Security profiles are enabled where supported.
+- [ ] Verify malicious domains are blocked.
+- [ ] Verify newly registered or suspicious domains are monitored according to organizational policy.
+- [ ] Verify DNS tunneling detection is enabled where supported.
+- [ ] Verify DNS Security updates are automatic.
+- [ ] Verify DNS Security events are logged.
+
+## URL Filtering (7 Checks)
+- [ ] Verify URL Filtering profiles are enabled.
+- [ ] Verify malicious websites are blocked.
+- [ ] Verify phishing websites are blocked.
+- [ ] Verify high-risk URL categories are restricted according to organizational policy.
+- [ ] Verify custom URL categories are documented and maintained.
+- [ ] Verify URL Filtering profiles are applied to applicable policies.
+- [ ] Verify URL Filtering events are logged.
+
+## File Blocking & Sandboxing (7 Checks)
+- [ ] Verify File Blocking profiles are enabled.
+- [ ] Verify executable files are restricted according to organizational policy.
+- [ ] Verify high-risk file types are controlled.
+- [ ] Verify sandbox integration (e.g., WildFire, FortiSandbox, Secure Malware Analytics) is enabled where available.
+- [ ] Verify unknown files are submitted for sandbox analysis where supported.
+- [ ] Verify sandbox verdicts are enforced.
+- [ ] Verify file inspection events are logged.
+
+## SSL/TLS Decryption (6 Checks)
+- [ ] Verify SSL/TLS Decryption is enabled where organizational policy permits.
+- [ ] Verify inbound and outbound decryption policies are documented.
+- [ ] Verify decryption exclusions are documented and approved.
+- [ ] Verify expired and untrusted certificates are handled according to organizational policy.
+- [ ] Verify weak SSL/TLS protocols are blocked.
+- [ ] Verify decryption events are logged.
+
+## Security Profile Management (6 Checks)
+- [ ] Verify security profiles follow organizational naming standards.
+- [ ] Verify security profiles are consistently applied.
+- [ ] Verify unused security profiles are removed.
+- [ ] Verify profile changes are documented.
+- [ ] Verify profile updates are reviewed periodically.
+- [ ] Verify security profiles are backed up with firewall configurations.
+
+## Threat Intelligence & Updates (6 Checks)
+- [ ] Verify threat intelligence updates are automatically downloaded.
+- [ ] Verify dynamic block lists are updated regularly where supported.
+- [ ] Verify signature update failures generate alerts.
+- [ ] Verify threat prevention licensing is valid and monitored.
+- [ ] Verify security content versions are periodically reviewed.
+- [ ] Verify update rollback procedures are documented.
+
+## Logging & Alerting (6 Checks)
+- [ ] Verify threat prevention events are logged.
+- [ ] Verify high-severity threat detections generate alerts.
+- [ ] Verify malware detections are forwarded to the SIEM.
+- [ ] Verify IPS detections are forwarded to the SIEM.
+- [ ] Verify sandbox verdicts are logged.
+- [ ] Verify repeated threat events trigger security notifications.
+
+## Compliance & Best Practices (6 Checks)
+- [ ] Verify threat prevention implementation complies with organizational security standards.
+- [ ] Verify threat prevention aligns with CIS Benchmarks where applicable.
+- [ ] Verify threat prevention supports NIST Cybersecurity Framework requirements where applicable.
+- [ ] Verify threat prevention supports ISO/IEC 27001:2022 security controls where applicable.
+- [ ] Verify threat prevention supports PCI DSS 4.0 requirements where applicable.
+- [ ] Verify documented exceptions are formally approved and periodically reviewed.
