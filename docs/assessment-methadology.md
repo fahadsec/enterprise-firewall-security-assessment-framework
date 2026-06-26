@@ -1,8 +1,54 @@
-# Enterprise Firewall Security Assessment Methadology
+# Enterprise Firewall Security Assessment Methodology
 
 ## 1. Scope
 
+This methodology provides a structured approach to assess the security posture of enterprise firewalls. It focuses on identifying security weaknesses, configuration issues, operational risks, and best practice gaps across supported firewall platforms.
+
+### Supported Vendors
+
+- Palo Alto Networks
+- Cisco Firepower / ASA
+- Fortinet FortiGate
+
+---
+
 ## 2. Information Gathering
+
+Before starting the assessment, collect the following information:
+
+### Firewall Information
+
+- Vendor
+- Model
+- Software Version
+- High Availability Status
+- Deployment Mode
+
+### Network Information
+
+- Security Zones
+- Interfaces
+- VLANs
+- Routing Configuration
+
+### Security Features
+
+- IPS / Threat Prevention
+- Antivirus
+- URL Filtering
+- SSL Inspection
+- VPN Configuration
+- Authentication Method
+- Logging Configuration
+
+### Documentation
+
+- Network Diagram
+- Firewall Policy
+- Security Standards
+- Change Management Records
+
+# Enterprise Firewall Security Assessment Methadology
 
 ## 3. Architecture Review
 
