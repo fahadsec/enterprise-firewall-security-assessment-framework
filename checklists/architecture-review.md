@@ -1,4 +1,4 @@
-# Architecture Review (57 Checks)
+# 1. Architecture Review (57 Checks)
 
 ## Network Architecture (7 Checks)
 - [ ] Verify firewall placement protects all required network security boundaries.
