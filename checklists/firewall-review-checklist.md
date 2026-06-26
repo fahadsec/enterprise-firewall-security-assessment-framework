@@ -67,7 +67,6 @@
 - [ ] Verify cloud, on-premises, and hybrid connectivity follow consistent security architecture.
 - [ ] Verify DDoS protection is implemented where Internet-facing services require it.
 
-
 ## Documentation (4 Checks)
 - [ ] Verify architecture diagrams are up to date.
 - [ ] Verify firewall inventory is up to date and maintained.
@@ -278,19 +277,16 @@
 - [ ] Verify documented deviations are formally approved and risk accepted.
 
 
+# NAT Review (56 Security Checks)
 
-NAT Review (56 Checks)
-
-# NAT Review
-
-## NAT Governance
+## NAT Governance (5 Checks)
 - [ ] Verify every NAT policy has a documented business justification.
 - [ ] Verify every NAT policy has an assigned business owner.
 - [ ] Verify NAT changes follow the organization's change management process.
 - [ ] Verify NAT policies are periodically reviewed and recertified.
 - [ ] Verify temporary NAT policies have an expiration date and are removed when no longer required.
 
-## NAT Design
+## NAT Design (7 Checks)
 - [ ] Verify NAT is implemented only where required.
 - [ ] Verify NAT design follows the principle of least privilege.
 - [ ] Verify NAT rule order is correct.
@@ -299,14 +295,14 @@ NAT Review (56 Checks)
 - [ ] Verify NAT implementation aligns with the approved network architecture.
 - [ ] Verify NAT does not bypass established network segmentation.
 
-## Source NAT
+## Source NAT (5 Checks)
 - [ ] Verify Source NAT is configured only for approved traffic.
 - [ ] Verify Dynamic Source NAT configuration follows business requirements.
 - [ ] Verify PAT (Port Address Translation) is used appropriately.
 - [ ] Verify Source NAT does not unnecessarily hide user accountability where logging is required.
 - [ ] Verify Source NAT policies are documented.
 
-## Destination NAT
+## Destination NAT (6 Checks)
 - [ ] Verify Destination NAT is configured only for approved services.
 - [ ] Verify inbound Destination NAT follows a default-deny approach.
 - [ ] Verify public-facing services are limited to authorized systems.
@@ -314,7 +310,7 @@ NAT Review (56 Checks)
 - [ ] Verify inbound published services are protected by appropriate firewall security policies.
 - [ ] Verify exposed management services are prohibited unless formally approved.
 
-## Security Validation
+## Security Validation (7 Checks)
 - [ ] Verify NAT rules are associated with corresponding security policies.
 - [ ] Verify NAT does not bypass IPS, Anti-Malware, or other security inspection.
 - [ ] Verify translated traffic is inspected by appropriate security profiles.
@@ -323,7 +319,7 @@ NAT Review (56 Checks)
 - [ ] Verify Internet-facing services are regularly reviewed.
 - [ ] Verify NAT policies do not create unintended access paths.
 
-## Rule Hygiene
+## Rule Hygiene (6 Checks)
 - [ ] Verify unused NAT policies are removed after validation.
 - [ ] Verify disabled NAT policies are periodically reviewed.
 - [ ] Verify duplicate NAT policies are eliminated.
@@ -331,28 +327,28 @@ NAT Review (56 Checks)
 - [ ] Verify obsolete NAT policies are removed.
 - [ ] Verify NAT policy hit counts are reviewed periodically.
 
-## Object Management
+## Object Management (5 Checks)
 - [ ] Verify NAT address objects follow organizational naming standards.
 - [ ] Verify translated address objects are documented.
 - [ ] Verify unused translated address objects are removed.
 - [ ] Verify public IP allocations are periodically reviewed.
 - [ ] Verify NAT policy comments clearly identify business purpose.
 
-## Logging & Monitoring
+## Logging & Monitoring (5 Checks)
 - [ ] Verify logging is enabled for security-relevant translated sessions.
 - [ ] Verify critical NAT events are forwarded to the SIEM.
 - [ ] Verify NAT translation failures are monitored.
 - [ ] Verify abnormal NAT activity generates security alerts where supported.
 - [ ] Verify NAT logs are retained according to organizational policy.
 
-## Documentation
+## Documentation (5 Checks)
 - [ ] Verify public-to-private IP mappings are documented.
 - [ ] Verify private-to-public IP mappings are documented.
 - [ ] Verify NAT architecture diagrams are current.
 - [ ] Verify NAT policy changes are documented.
 - [ ] Verify NAT exceptions are formally approved and documented.
 
-## Compliance & Best Practices
+## Compliance & Best Practices (5 Checks)
 - [ ] Verify NAT implementation complies with organizational security standards.
 - [ ] Verify NAT implementation aligns with CIS Benchmarks where applicable.
 - [ ] Verify NAT implementation supports NIST Cybersecurity Framework requirements where applicable.
@@ -360,17 +356,15 @@ NAT Review (56 Checks)
 - [ ] Verify NAT implementation supports PCI DSS requirements where applicable.
 ---
 
-VPN Security Review (63 Checks)
-
-# VPN Security
-## VPN Governance
+# VPN Security Review (63 Security Checks)
+## VPN Governance (5 Checks)
 - [ ] Verify every VPN connection has a documented business justification.
 - [ ] Verify every VPN connection has an assigned business owner.
 - [ ] Verify VPN changes follow the organization's change management process.
 - [ ] Verify VPN configurations are periodically reviewed and recertified.
 - [ ] Verify unused or obsolete VPN tunnels are removed.
 
-## VPN Architecture
+## VPN Architecture (6 Checks)
 - [ ] Verify only approved VPN technologies are deployed.
 - [ ] Verify VPN gateways are hardened according to organizational standards.
 - [ ] Verify VPN architecture follows the principle of least privilege.
@@ -378,7 +372,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify VPN routing follows the approved network architecture.
 - [ ] Verify Internet-facing VPN gateways are protected by appropriate security controls.
 
-## Cryptography
+## Cryptography (8 Checks)
 - [ ] Verify IKEv2 is used where supported.
 - [ ] Verify IKEv1 is disabled unless explicitly required for compatibility.
 - [ ] Verify strong encryption algorithms (AES-256 or organizationally approved equivalents) are configured.
@@ -388,7 +382,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify strong Diffie-Hellman groups are configured.
 - [ ] Verify weak ciphers and insecure protocols are disabled.
 
-## Authentication & Authorization
+## Authentication & Authorization (7 Checks)
 - [ ] Verify Multi-Factor Authentication (MFA) is enabled for remote access VPN users.
 - [ ] Verify certificate-based authentication is implemented where applicable.
 - [ ] Verify VPN authentication integrates with centralized identity services (LDAP, RADIUS, TACACS+, SAML, etc.) where applicable.
@@ -397,7 +391,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify disabled user accounts cannot authenticate to the VPN.
 - [ ] Verify privileged VPN access requires additional authorization where applicable.
 
-## Remote Access VPN
+## Remote Access VPN (7 Checks)
 - [ ] Verify remote VPN users can access only authorized network segments.
 - [ ] Verify split tunneling is disabled unless explicitly approved.
 - [ ] Verify endpoint posture or compliance validation is enforced where supported.
@@ -406,7 +400,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify VPN sessions terminate immediately when user accounts are disabled.
 - [ ] Verify remote access VPN configurations are periodically reviewed.
 
-## Site-to-Site VPN
+## Site-to-Site VPN (6 Checks)
 - [ ] Verify peer IP addresses are documented.
 - [ ] Verify peer authentication is securely configured.
 - [ ] Verify VPN routing permits only authorized networks.
@@ -414,7 +408,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify unnecessary networks are not advertised through VPN tunnels.
 - [ ] Verify redundant site-to-site VPN tunnels are periodically tested.
 
-## Tunnel Security
+## Tunnel Security (6 Checks)
 - [ ] Verify VPN tunnels are continuously monitored.
 - [ ] Verify Dead Peer Detection (DPD) or equivalent keepalive mechanisms are enabled where supported.
 - [ ] Verify tunnel rekey intervals comply with organizational standards.
@@ -422,14 +416,14 @@ VPN Security Review (63 Checks)
 - [ ] Verify unauthorized VPN peers are rejected.
 - [ ] Verify VPN tunnels do not bypass firewall security inspection without formal approval.
 
-## Certificate Management
+## Certificate Management (5 Checks)
 - [ ] Verify VPN certificates are issued by a trusted Certificate Authority.
 - [ ] Verify VPN certificates are renewed before expiration.
 - [ ] Verify certificate revocation checking (CRL or OCSP) is enabled where supported.
 - [ ] Verify expired or revoked certificates cannot be used for VPN authentication.
 - [ ] Verify private keys associated with VPN certificates are securely protected.
 
-## Logging & Monitoring
+## Logging & Monitoring (7 Checks)
 - [ ] Verify successful VPN logins are logged.
 - [ ] Verify failed VPN authentication attempts are logged.
 - [ ] Verify VPN logs are forwarded to the SIEM or centralized log management platform.
@@ -438,7 +432,7 @@ VPN Security Review (63 Checks)
 - [ ] Verify repeated failed VPN login attempts generate alerts.
 - [ ] Verify VPN log retention complies with organizational policy.
 
-##  Compliance & Best Practices
+##  Compliance & Best Practices (6 Checks)
 - [ ] Verify VPN implementation complies with organizational security standards.
 - [ ] Verify VPN implementation aligns with CIS Benchmarks where applicable.
 - [ ] Verify VPN implementation supports NIST Cybersecurity Framework requirements where applicable.
@@ -449,8 +443,7 @@ VPN Security Review (63 Checks)
 
 ---
 
-Logging & Monitoring Review (60 Checks)
-# Logging & Monitoring 
+# Logging & Monitoring (60 Security Checks)
 ## Logging Configuration (7 Checks)
 - [ ] Verify logging is enabled for all security-relevant firewall policies.
 - [ ] Verify both successful and denied connections are logged where required.
@@ -531,8 +524,8 @@ Logging & Monitoring Review (60 Checks)
 - [ ] Verify logging supports ISO/IEC 27001:2022 security controls where applicable.
 - [ ] Verify logging supports PCI DSS 4.0 requirements where applicable.
 
-Threat Prevention Review (76 Checks)
-# Threat Prevention
+
+# Threat Prevention (76 Security Checks)
 ## Threat Prevention Governance (5 Checks)
 - [ ] Verify threat prevention policies have documented business justification.
 - [ ] Verify threat prevention profiles are reviewed periodically.
