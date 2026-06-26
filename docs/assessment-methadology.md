@@ -48,8 +48,6 @@ Before starting the assessment, collect the following information:
 - Security Standards
 - Change Management Records
 
-# Enterprise Firewall Security Assessment Methadology
-
 ## 3. Architecture Review
 
 ## 4. Configuration Review
