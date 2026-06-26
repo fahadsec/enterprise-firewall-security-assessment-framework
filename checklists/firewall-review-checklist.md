@@ -71,14 +71,12 @@ Architecture Review (57 Checks)
 
 
 ## Documentation
-
 - [ ] Verify architecture diagrams are up to date.
 - [ ] Verify firewall inventory is up to date and maintained.
 - [ ] Verify network topology is updated and documented.
 - [ ] Verify architecture changes are tracked through change management.
 
 ## Best Practices
-
 - [ ] Verify management traffic is separated from production traffic.
 - [ ] Verify IPv6 architecture has been reviewed where deployed.
 - [ ] Verify third-party connectivity is documented and periodically reviewed.
@@ -285,57 +283,85 @@ Rule Base Security Review (82 Security Checks)
 
 
 
-NAT Review (25 Checks)
+NAT Review (56 Checks)
 
 # NAT Review
 
-## NAT Design
+## NAT Governance
+- [ ] Verify every NAT policy has a documented business justification.
+- [ ] Verify every NAT policy has an assigned business owner.
+- [ ] Verify NAT changes follow the organization's change management process.
+- [ ] Verify NAT policies are periodically reviewed and recertified.
+- [ ] Verify temporary NAT policies have an expiration date and are removed when no longer required.
 
-- [ ] Verify NAT policies have documented business justification.
-- [ ] Verify NAT rules follow least privilege.
+## NAT Design
+- [ ] Verify NAT is implemented only where required.
+- [ ] Verify NAT design follows the principle of least privilege.
 - [ ] Verify NAT rule order is correct.
-- [ ] Verify unnecessary NAT rules are removed.
+- [ ] Verify bidirectional NAT is implemented only where justified.
+- [ ] Verify overlapping NAT policies do not exist.
+- [ ] Verify NAT implementation aligns with the approved network architecture.
+- [ ] Verify NAT does not bypass established network segmentation.
 
 ## Source NAT
-
-- [ ] Verify Source NAT is configured only where required.
-- [ ] Verify dynamic NAT configuration is appropriate.
-- [ ] Verify PAT usage follows business requirements.
-- [ ] Verify source address translation is documented.
+- [ ] Verify Source NAT is configured only for approved traffic.
+- [ ] Verify Dynamic Source NAT configuration follows business requirements.
+- [ ] Verify PAT (Port Address Translation) is used appropriately.
+- [ ] Verify Source NAT does not unnecessarily hide user accountability where logging is required.
+- [ ] Verify Source NAT policies are documented.
 
 ## Destination NAT
-
 - [ ] Verify Destination NAT is configured only for approved services.
-- [ ] Verify inbound NAT follows default-deny principles.
-- [ ] Verify public services are limited to authorized hosts.
+- [ ] Verify inbound Destination NAT follows a default-deny approach.
+- [ ] Verify public-facing services are limited to authorized systems.
+- [ ] Verify Destination NAT does not expose unauthorized internal hosts.
+- [ ] Verify inbound published services are protected by appropriate firewall security policies.
+- [ ] Verify exposed management services are prohibited unless formally approved.
+
+## Security Validation
+- [ ] Verify NAT rules are associated with corresponding security policies.
+- [ ] Verify NAT does not bypass IPS, Anti-Malware, or other security inspection.
+- [ ] Verify translated traffic is inspected by appropriate security profiles.
+- [ ] Verify internal IP addressing is not unnecessarily exposed.
+- [ ] Verify critical infrastructure is not published through NAT without formal approval.
+- [ ] Verify Internet-facing services are regularly reviewed.
+- [ ] Verify NAT policies do not create unintended access paths.
 
 ## Rule Hygiene
+- [ ] Verify unused NAT policies are removed after validation.
+- [ ] Verify disabled NAT policies are periodically reviewed.
+- [ ] Verify duplicate NAT policies are eliminated.
+- [ ] Verify shadowed or redundant NAT policies are corrected.
+- [ ] Verify obsolete NAT policies are removed.
+- [ ] Verify NAT policy hit counts are reviewed periodically.
 
-- [ ] Verify unused NAT rules are removed.
-- [ ] Verify disabled NAT rules are reviewed.
-- [ ] Verify duplicate NAT rules are removed.
-- [ ] Verify shadow NAT rules are identified.
+## Object Management
+- [ ] Verify NAT address objects follow organizational naming standards.
+- [ ] Verify translated address objects are documented.
+- [ ] Verify unused translated address objects are removed.
+- [ ] Verify public IP allocations are periodically reviewed.
+- [ ] Verify NAT policy comments clearly identify business purpose.
 
-## Security
-
-- [ ] Verify NAT rules do not bypass security inspection.
-- [ ] Verify security policies exist for translated traffic.
-- [ ] Verify logging is enabled for translated sessions.
-- [ ] Verify critical systems are not unnecessarily exposed.
+## Logging & Monitoring
+- [ ] Verify logging is enabled for security-relevant translated sessions.
+- [ ] Verify critical NAT events are forwarded to the SIEM.
+- [ ] Verify NAT translation failures are monitored.
+- [ ] Verify abnormal NAT activity generates security alerts where supported.
+- [ ] Verify NAT logs are retained according to organizational policy.
 
 ## Documentation
+- [ ] Verify public-to-private IP mappings are documented.
+- [ ] Verify private-to-public IP mappings are documented.
+- [ ] Verify NAT architecture diagrams are current.
+- [ ] Verify NAT policy changes are documented.
+- [ ] Verify NAT exceptions are formally approved and documented.
 
-- [ ] Verify public IP mappings are documented.
-- [ ] Verify private IP mappings are documented.
-- [ ] Verify change history is maintained.
-- [ ] Verify temporary NAT rules are removed.
-
-## Best Practices
-
-- [ ] Verify bidirectional NAT is used only where required.
-- [ ] Verify NAT complies with organizational standards.
-
-
+## Compliance & Best Practices
+- [ ] Verify NAT implementation complies with organizational security standards.
+- [ ] Verify NAT implementation aligns with CIS Benchmarks where applicable.
+- [ ] Verify NAT implementation supports NIST Cybersecurity Framework requirements where applicable.
+- [ ] Verify NAT implementation supports ISO/IEC 27001 security controls where applicable.
+- [ ] Verify NAT implementation supports PCI DSS requirements where applicable.
 ---
 
 VPN Security Review (30 Checks)
