@@ -43,8 +43,7 @@ This assessment covers:
 
 ---
 
-# NAT Review Checklist
-##  NAT Review (56 Security Checks)
+# NAT Review Checklist (56 Security Checks)
 
 ## NAT Governance (5 Checks)
 - [ ] Verify every NAT policy has a documented business justification.
