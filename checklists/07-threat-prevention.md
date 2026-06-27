@@ -1,3 +1,47 @@
+# Enterprise Firewall Threat Prevention Review Checklist
+
+## Overview
+
+This checklist evaluates the effectiveness of firewall threat prevention technologies used to detect, inspect, and block malicious network activity.
+
+## Objectives
+
+- Validate threat prevention configuration.
+- Reduce malware exposure.
+- Verify advanced security inspection.
+- Improve attack prevention capabilities.
+
+## Scope
+
+This assessment covers:
+
+- Intrusion Prevention System (IPS)
+- Anti-Malware
+- Anti-Spyware
+- DNS Security
+- URL Filtering
+- File Blocking
+- SSL/TLS Inspection
+- Application Identification
+- Threat Intelligence
+- Security Profile Management
+
+## Standards & References
+
+- CIS Benchmarks
+- NIST CSF
+- CIS Controls v8
+- ISO/IEC 27001
+- PCI DSS
+
+## Intended Audience
+
+- Security Engineers
+- SOC Analysts
+- Security Consultants
+- Security Auditors
+
+--- 
 # Threat Prevention (76 Security Checks)
 ## Threat Prevention Governance (5 Checks)
 - [ ] Verify threat prevention policies have documented business justification.
