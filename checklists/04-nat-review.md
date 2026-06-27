@@ -1,4 +1,50 @@
-# NAT Review (56 Security Checks)
+# Enterprise Firewall NAT Security Review Checklist
+
+## Overview
+
+This checklist validates Network Address Translation (NAT) configurations to ensure secure, optimized, documented, and compliant address translation.
+
+## Objectives
+
+- Validate NAT implementation.
+- Reduce unnecessary exposure.
+- Review NAT optimization.
+- Ensure translated traffic remains protected.
+
+## Scope
+
+This assessment covers:
+
+- Source NAT
+- Destination NAT
+- Static NAT
+- Dynamic NAT
+- Port Address Translation (PAT)
+- NAT Rule Hygiene
+- NAT Security
+- Public IP Exposure
+- Address Object Management
+- Documentation
+
+## Standards & References
+
+- CIS Benchmarks
+- NIST CSF
+- CIS Controls v8
+- ISO/IEC 27001
+- PCI DSS
+
+## Intended Audience
+
+- Firewall Engineers
+- Network Engineers
+- Security Consultants
+- Security Auditors
+
+---
+
+# NAT Review Checklist
+##  NAT Review (56 Security Checks)
 
 ## NAT Governance (5 Checks)
 - [ ] Verify every NAT policy has a documented business justification.
