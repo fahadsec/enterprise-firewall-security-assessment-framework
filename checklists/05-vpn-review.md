@@ -42,8 +42,8 @@ This assessment covers:
 
 ---
 
-# VPN Security Review Checklist
-### VPN Security Review (63 Security Checks)
+# VPN Security Review (63 Security Checks)
+
 ## VPN Governance (5 Checks)
 - [ ] Verify every VPN connection has a documented business justification.
 - [ ] Verify every VPN connection has an assigned business owner.
