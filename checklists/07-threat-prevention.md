@@ -42,7 +42,9 @@ This assessment covers:
 - Security Auditors
 
 --- 
-# Threat Prevention (76 Security Checks)
+
+# Threat Prevention Review Checklist (76 Security Checks)
+
 ## Threat Prevention Governance (5 Checks)
 - [ ] Verify threat prevention policies have documented business justification.
 - [ ] Verify threat prevention profiles are reviewed periodically.
