@@ -1,4 +1,49 @@
-# Logging & Monitoring (60 Security Checks)
+# Enterprise Firewall Logging & Monitoring Review Checklist
+
+## Overview
+
+This checklist validates firewall logging, monitoring, alerting, SIEM integration, and log management to support effective threat detection, investigation, and compliance.
+
+## Objectives
+
+- Validate security logging.
+- Improve visibility.
+- Verify SIEM integration.
+- Support incident response.
+- Ensure audit readiness.
+
+## Scope
+
+This assessment covers:
+
+- Traffic Logging
+- Threat Logging
+- System Logging
+- Administrator Logging
+- SIEM Integration
+- Alerting
+- Log Retention
+- Time Synchronization (NTP)
+
+## Standards & References
+
+- CIS Benchmarks
+- NIST CSF
+- CIS Controls v8
+- ISO/IEC 27001
+- PCI DSS
+
+## Intended Audience
+
+- SOC Analysts
+- Security Engineers
+- Security Consultants
+- Security Auditors
+
+---
+
+# Logging & Monitoring Review Checklist (60 Security Checks)
+
 ## Logging Configuration (7 Checks)
 - [ ] Verify logging is enabled for all security-relevant firewall policies.
 - [ ] Verify both successful and denied connections are logged where required.
