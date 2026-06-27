@@ -1,10 +1,10 @@
-Enterprise Firewall Architecture Review Checklist
+# Enterprise Firewall Architecture Review Checklist
 
-Overview
+## Overview
 
 This document provides a comprehensive enterprise firewall architecture review checklist designed to evaluate firewall deployment, network segmentation, security zoning, resilience, and infrastructure protection against enterprise security best practices.
 
-Objectives
+## Objectives
 
 - Validate secure firewall architecture.
 - Assess network segmentation and security boundaries.
@@ -13,7 +13,7 @@ Objectives
 - Assess routing and infrastructure resilience.
 - Validate architectural documentation and governance.
 
-Scope
+## Scope
 
 This assessment covers:
 
@@ -29,7 +29,7 @@ This assessment covers:
 - Infrastructure Protection
 - Architecture Documentation
 
-Standards & References
+## Standards & References
 
 - CIS Benchmarks
 - NIST Cybersecurity Framework (CSF)
@@ -37,7 +37,7 @@ Standards & References
 - ISO/IEC 27001
 - PCI DSS
 
-Intended Audience
+## Intended Audience
 
 - Enterprise Security Consultants
 - Security Architects
@@ -47,11 +47,7 @@ Intended Audience
 
 ---
 
-Architecture Review Checklist
-
-
-
-# Architecture Review (57 Checks)
+# Architecture Review Checklist (57 Checks)
 
 ## Network Architecture (7 Checks)
 - [ ] Verify firewall placement protects all required network security boundaries.
