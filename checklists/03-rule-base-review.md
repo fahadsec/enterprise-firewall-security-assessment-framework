@@ -44,10 +44,7 @@ This assessment covers:
 
 ---
 
-# Rule Base Review Checklist
----
-
-## Rule Base Security Review (82 Security Checks)
+# Rule Base Security Review Checklist (82 Security Checks)
 
 ## Rule Governance (7 Checks)
 - [ ] Verify every firewall rule has a documented business justification.
