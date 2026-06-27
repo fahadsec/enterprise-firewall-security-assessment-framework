@@ -1,4 +1,49 @@
-# VPN Security Review (63 Security Checks)
+# Enterprise Firewall VPN Security Review Checklist
+
+## Overview
+
+This checklist evaluates remote access and site-to-site VPN deployments to ensure secure connectivity, strong authentication, and modern cryptographic protection.
+
+## Objectives
+
+- Validate VPN security.
+- Review cryptographic configuration.
+- Secure remote access.
+- Assess tunnel monitoring.
+- Reduce unauthorized access risk.
+
+## Scope
+
+This assessment covers:
+
+- VPN Configuration
+- Remote Access VPN
+- Site-to-Site VPN
+- Cryptography
+- Authentication
+- Tunnel Security
+- VPN Monitoring
+- VPN Lifecycle Management
+
+## Standards & References
+
+- CIS Benchmarks
+- NIST CSF
+- CIS Controls v8
+- ISO/IEC 27001
+- PCI DSS
+
+## Intended Audience
+
+- Security Engineers
+- Firewall Administrators
+- Security Consultants
+- Security Auditors
+
+---
+
+# VPN Security Review Checklist
+### VPN Security Review (63 Security Checks)
 ## VPN Governance (5 Checks)
 - [ ] Verify every VPN connection has a documented business justification.
 - [ ] Verify every VPN connection has an assigned business owner.
