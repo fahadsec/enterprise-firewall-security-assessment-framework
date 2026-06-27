@@ -1,10 +1,10 @@
-Enterprise Firewall Management Plane Security Review Checklist
+# Enterprise Firewall Management Plane Security Review Checklist
 
-Overview
+## Overview
 
 This checklist validates the security of the firewall management plane to ensure administrative access is properly secured and protected against unauthorized access.
 
-Objectives
+## Objectives
 
 - Secure administrative access.
 - Validate authentication and authorization.
@@ -12,7 +12,7 @@ Objectives
 - Verify configuration protection.
 - Validate management monitoring and auditing.
 
-Scope
+## Scope
 
 This assessment covers:
 
@@ -28,7 +28,7 @@ This assessment covers:
 - Administrative Logging
 - Monitoring & Auditing
 
-Standards & References
+## Standards & References
 
 - CIS Benchmarks
 - NIST CSF
@@ -36,7 +36,7 @@ Standards & References
 - ISO/IEC 27001
 - PCI DSS
 
-Intended Audience
+## Intended Audience
 
 - Firewall Administrators
 - Security Engineers
@@ -45,9 +45,7 @@ Intended Audience
 
 ---
 
-Management Plane Security Checklist
-
-# Management Plane Security (61 Security Checks)
+# Management Plane Security Checklist (61 Security Checks)
 
 ## Administrative Access (6 Checks)
 - [ ] Verify HTTPS is enabled for web-based management.
