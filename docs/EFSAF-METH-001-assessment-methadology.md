@@ -1,7 +1,3 @@
-Below is **Part 1** of the official **EFSAF-METH-001** standard. It establishes the governance, philosophy, principles, lifecycle, and planning methodology that every EFSAF assessment will follow. The remaining technical execution workflows (assessment activities, evidence handling, reporting, QA, AI integration, etc.) naturally build upon this foundation in Parts 2–4.
-
----
-
 # EFSAF-METH-001
 
 # Enterprise Firewall Security Assessment Methodology
