@@ -5,12 +5,19 @@
 ## Part 1 – Report Framework and Administrative Information
 
 **Document ID:** EFSAF-TMP-001
+
 **Framework:** Enterprise Firewall Security Assessment Framework (EFSAF)
+
 **Version:** 1.0
+
 **Status:** Approved Standard
+
 **Classification:** Enterprise Internal Standard
+
 **Owner:** Information Security Governance
+
 **Effective Date:** TBD
+
 **Review Cycle:** Annual
 
 ---
