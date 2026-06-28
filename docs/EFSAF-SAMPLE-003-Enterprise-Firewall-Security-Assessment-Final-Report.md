@@ -1,10 +1,4 @@
-This is an excellent point to begin the **final capstone deliverable** of EFSAF. Since the complete report is designed to span **250–350 PDF pages**, Part 1 should establish the entire enterprise report foundation exactly as a real consulting firm (such as Deloitte, EY, KPMG, PwC, Accenture, or IBM Consulting) would deliver it to a client.
-
-Below is the recommended content for **Part 1**.
-
----
-
-# EFSAF-SAMPLE-003-Enterprise-Firewall-Security-Assessment-Final-Report.md
+# EFSAF-SAMPLE-003-Enterprise-Firewall-Security-Assessment-Final-Report
 
 # Enterprise Firewall Security Assessment Report
 
